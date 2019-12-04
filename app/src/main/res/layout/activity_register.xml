@@ -7,6 +7,13 @@
     android:orientation="vertical"
     android:background="@color/background"
     tools:context=".RegisterActivity">
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/person"
+        />
 
     <EditText
         android:layout_width="match_parent"
