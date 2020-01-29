@@ -50,7 +50,7 @@ private ImageView imageView;
             Bitmap imageBitMap=(Bitmap)extras.get("data");
             imageView.setImageBitmap(imageBitMap);
         }
-        //super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
 
     }
 }
