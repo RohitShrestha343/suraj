@@ -16,10 +16,11 @@
         />
 
     <EditText
+        android:id="@+id/first_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:hint="Full Name"
+        android:hint="First Name"
         android:textSize="18dp"
         android:layout_marginTop="30dp"
         style="@style/margin"
@@ -27,75 +28,32 @@
         android:textColorHint="@color/text"
         />
     <EditText
+        android:id="@+id/last_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/edit_rounded"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:hint="Email"
-        android:textSize="18sp"
-        style="@style/margin"
-        android:textColorHint="@color/text"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_rounded"
-        android:layout_marginTop="10dp"
-        android:gravity="center"        android:hint="Address"
-        android:textSize="18sp"
-        style="@style/margin"
-        android:textColorHint="@color/text"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_rounded"
-        android:layout_marginTop="10dp"
-        android:gravity="center"        android:hint="Contact No"
-        android:textSize="18sp"
-        style="@style/margin"
-        android:textColorHint="@color/text"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_rounded"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:hint="Password"
-        android:textSize="18sp"
-        style="@style/margin"
-        android:textColorHint="@color/text"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/edit_rounded"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:hint="Confirm Password"
+        android:hint="Last name"
         android:textSize="18sp"
         style="@style/margin"
         android:textColorHint="@color/text"
         />
     <RadioGroup
+        android:id="@+id/rdogender"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:orientation="horizontal"
         android:layout_marginTop="20dp">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="18sp"
-    android:text="Gender: "
-    style="@style/margin"
-    android:textColor="@color/text"
-    />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Gender: "
+            style="@style/margin"
+            android:textColor="@color/text"
+            />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,10 +69,50 @@
             style="@style/margin"
             />
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/signup_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_rounded"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:hint="Email"
+        android:textSize="18sp"
+        style="@style/margin"
+        android:textColorHint="@color/text"
+        />
+
+    <EditText
+        android:id="@+id/signpassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_rounded"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:hint="Password"
+        android:textSize="18sp"
+        style="@style/margin"
+        android:textColorHint="@color/text"
+        />
+    <EditText
+        android:id="@+id/signrepassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_rounded"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:hint="Confirm Password"
+        android:textSize="18sp"
+        style="@style/margin"
+        android:textColorHint="@color/text"
+        />
+
 <Button
+    android:id="@+id/btnSignup"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:text="Register"
+    android:text="Sign Up"
     android:layout_marginTop="30dp"
     android:textSize="22sp"
     android:background="@drawable/button_rounded"

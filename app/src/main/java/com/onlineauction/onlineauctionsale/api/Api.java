@@ -20,7 +20,7 @@ public interface Api {
 
         @Multipart
         @POST("upload")
-        Call<ImageModel>uploadImage(@Part MultipartBody.Part imageFile);
+        Call<ImageModel>uploadImage(@Part MultipartBody.Part image);
 
         @POST("users/signup")
         Call<Signup_response>register(@Body Users cud);
