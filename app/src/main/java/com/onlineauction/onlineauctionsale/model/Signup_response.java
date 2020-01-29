@@ -1,7 +1,7 @@
 package com.onlineauction.onlineauctionsale.model;
 
 public class Signup_response {
-    private String message_sucess;
+
     private String status;
     private String token;
 
@@ -18,11 +18,5 @@ public class Signup_response {
         return token;
     }
 
-    public Signup_response(String message_sucess) {
-        this.message_sucess = message_sucess;
-    }
 
-    public String getMessage_sucess() {
-        return message_sucess;
-    }
 }
