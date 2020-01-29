@@ -26,4 +26,4 @@ public interface Api {
         Call<Signup_response>register(@Body Users cud);
     }
 
-}
+
