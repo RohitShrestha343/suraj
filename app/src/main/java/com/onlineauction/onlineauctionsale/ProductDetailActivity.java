@@ -28,6 +28,16 @@ public class ProductDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
+        product_Image = findViewById(R.id.product_Image);
+        product_name = findViewById(R.id.product_name);
+        product_category = findViewById(R.id.product_category);
+        base_price = findViewById(R.id.base_price);
+        start_date = findViewById(R.id.start_date);
+        end_date = findViewById(R.id.end_date);
+        highest_bid = findViewById(R.id.highest_bid);
+        bit_button = findViewById(R.id.bit_button);
+        amount = findViewById(R.id.amount);
+
 
 
 
