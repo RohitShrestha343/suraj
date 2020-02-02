@@ -38,7 +38,32 @@ public class ProductDetailActivity extends AppCompatActivity {
         bit_button = findViewById(R.id.bit_button);
         amount = findViewById(R.id.amount);
 
+        Bundle bundle = getIntent().getExtras();
 
+        if (bundle != null){
+            String imagepath = bundle.getString("image");
+
+            try {
+                URL url =new URL(imagepath);
+                product_Image.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            product_name.setText(bundle.getString("name"));
+            product_category.setText(bundle.getString("category"));
+            base_price.setText(bundle.getString("base_price"));
+            start_date.setText(bundle.getString("start_date"));
+            end_date.setText(bundle.getString("end_date"));
+            highest_bid.setText(bundle.getString("highest_bid"));
+        }
+
+        bit_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ProductDetailActivity.this, "Bid Added", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
