@@ -1,13 +1,18 @@
 package com.onlineauction.onlineauctionsale.api;
 import com.onlineauction.onlineauctionsale.model.ImageModel;
+import com.onlineauction.onlineauctionsale.model.ProductsData;
 import com.onlineauction.onlineauctionsale.model.Signup_response;
 import com.onlineauction.onlineauctionsale.model.Users;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -24,6 +29,9 @@ public interface Api {
 
         @POST("users/signup")
         Call<Signup_response>register(@Body Users cud);
+
+        @GET("product/addproduct")
+        Call<List<ProductsData>> getproducts(@Header("Authorization")String token);
     }
 
 

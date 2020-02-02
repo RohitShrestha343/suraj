@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etLogEmail, etLogPassword;
     private Button btnLogin, btnLogRegister;
     ImageButton btn_showpass;
-    static String Token;
+    public String Token="";
     private boolean isShowPassword = false;
 
     @Override
@@ -52,6 +52,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable) {
 
+            }
+        });
+        btnLogRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
+                startActivity(intent);
             }
         });
         btnLogin.setOnClickListener(new View.OnClickListener() {
