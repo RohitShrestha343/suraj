@@ -1,4 +1,5 @@
 package com.onlineauction.onlineauctionsale.api;
+import com.onlineauction.onlineauctionsale.model.Bidmodel;
 import com.onlineauction.onlineauctionsale.model.ImageModel;
 import com.onlineauction.onlineauctionsale.model.ProductsData;
 import com.onlineauction.onlineauctionsale.model.Signup_response;
@@ -14,8 +15,10 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 
 public interface Api {
 
@@ -32,6 +35,11 @@ public interface Api {
 
         @GET("product/addproduct")
         Call<List<ProductsData>> getproducts(@Header("Authorization")String token);
+
+
+        @PATCH("product/bid/{bid}")
+        Call<Bidmodel> getBid( @Header("Authorization") String s , @Path("bid") String bid, @Body Bidmodel bidmodel);
+
     }
 
 

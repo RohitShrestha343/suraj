@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -58,6 +59,8 @@ public class ProductListApt extends RecyclerView.Adapter<ProductListApt.Products
                 String imagepath = imagePath + productsData.getProduct_Image();
                 Intent intent = new Intent(context, ProductDetailActivity.class);
 
+                intent.putExtra("id", productsData.get_id());
+                Toast.makeText(context, "product id"+productsData.get_id(), Toast.LENGTH_SHORT).show();
                 intent.putExtra("image", imagepath);
                 intent.putExtra("name", productsData.getProduct_name());
                 intent.putExtra("category", productsData.getProduct_category());

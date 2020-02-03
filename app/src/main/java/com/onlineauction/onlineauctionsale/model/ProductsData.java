@@ -1,6 +1,7 @@
 package com.onlineauction.onlineauctionsale.model;
 
 public class ProductsData {
+    private String _id;
     private String product_Image;
     private String product_name;
     private String product_category;
@@ -8,8 +9,9 @@ public class ProductsData {
     private String start_date;
     private String end_date;
     private String highest_bid;
+    private String email;
 
-    public ProductsData(String product_Image, String product_name, String product_category, String base_price, String start_date, String end_date, String highest_bid) {
+    public ProductsData(String product_Image, String product_name, String product_category, String base_price, String start_date, String end_date, String highest_bid, String email) {
         this.product_Image = product_Image;
         this.product_name = product_name;
         this.product_category = product_category;
@@ -17,10 +19,28 @@ public class ProductsData {
         this.start_date = start_date;
         this.end_date = end_date;
         this.highest_bid = highest_bid;
+        this.email = email;
+    }
+
+
+    public ProductsData(String _id, String product_Image, String product_name, String product_category, String base_price, String start_date, String end_date, String highest_bid, String email) {
+        this._id = _id;
+        this.product_Image = product_Image;
+        this.product_name = product_name;
+        this.product_category = product_category;
+        this.base_price = base_price;
+        this.start_date = start_date;
+        this.end_date = end_date;
+        this.highest_bid = highest_bid;
+        this.email = email;
     }
 
     public String getProduct_Image() {
         return product_Image;
+    }
+
+    public String get_id() {
+        return _id;
     }
 
     public void setProduct_Image(String product_Image) {
@@ -73,5 +93,9 @@ public class ProductsData {
 
     public void setHighest_bid(String highest_bid) {
         this.highest_bid = highest_bid;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
