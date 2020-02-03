@@ -36,6 +36,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         end_date = findViewById(R.id.end_date);
         highest_bid = findViewById(R.id.highest_bid);
         bit_button = findViewById(R.id.bit_button);
+        
         amount = findViewById(R.id.amount);
 
         Bundle bundle = getIntent().getExtras();
@@ -56,12 +57,22 @@ public class ProductDetailActivity extends AppCompatActivity {
             start_date.setText(bundle.getString("start_date"));
             end_date.setText(bundle.getString("end_date"));
             highest_bid.setText(bundle.getString("highest_bid"));
+
         }
 
         bit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ProductDetailActivity.this, "Bid Added", Toast.LENGTH_SHORT).show();
+                int Hnum=0;
+                Hnum=Integer.parseInt(highest_bid.getText().toString());
+                int getnum=Integer.parseInt( amount.getText().toString());
+                if(Hnum>getnum){
+                    Toast.makeText(ProductDetailActivity.this, "Bid mustbe more", Toast.LENGTH_SHORT).show();
+                }
+
+               else{
+                    Toast.makeText(ProductDetailActivity.this, "thank you", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
