@@ -68,7 +68,7 @@ public class ProductListApt extends RecyclerView.Adapter<ProductListApt.Products
                 intent.putExtra("start_date", productsData.getStart_date());
                 intent.putExtra("end_date", productsData.getEnd_date());
                 intent.putExtra("highest_bid", productsData.getHighest_bid());
-
+                intent.putExtra("email", productsData.getEmail());
                 context.startActivity(intent);
 
             }
@@ -107,6 +107,7 @@ public class ProductListApt extends RecyclerView.Adapter<ProductListApt.Products
             highest_bid = itemView.findViewById(R.id.ProdHighestBid);
             amount = itemView.findViewById(R.id.amount);
             bit_button = itemView.findViewById(R.id.bit_button);
+            email=itemView.findViewById(R.id.email);
 
         }
     }
