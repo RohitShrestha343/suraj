@@ -1,4 +1,5 @@
 package com.onlineauction.onlineauctionsale.api;
+import com.onlineauction.onlineauctionsale.model.Bidm;
 import com.onlineauction.onlineauctionsale.model.Bidmodel;
 import com.onlineauction.onlineauctionsale.model.ImageModel;
 import com.onlineauction.onlineauctionsale.model.ProductsData;
@@ -36,9 +37,9 @@ public interface Api {
         @GET("product/addproduct")
         Call<List<ProductsData>> getproducts(@Header("Authorization")String token);
 
-
-        @PATCH("product/bid/{bid}")
-        Call<Bidmodel> getBid( @Header("Authorization") String s , @Path("bid") String bid, @Body Bidmodel bidmodel);
+        @FormUrlEncoded
+        @PATCH("product/bid/{id}")
+        Call<Bidm> getBid( @Path("id") String bid, @Header("Authorization") String s ,@Field("highest_bid") String highest_bid);
 
     }
 

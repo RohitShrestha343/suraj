@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
                     return;
                 }
                 List<ProductsData>productsData=response.body();
-                Toast.makeText(getContext(), ""+productsData.size(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), ""+productsData.size(), Toast.LENGTH_SHORT).show();
 
                 ProductListApt productListApt=new ProductListApt(getContext(),productsData);
                 recyclerView.setAdapter(productListApt);
