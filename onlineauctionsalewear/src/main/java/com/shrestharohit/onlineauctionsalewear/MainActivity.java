@@ -52,6 +52,7 @@ public class MainActivity extends WearableActivity {
         LoginBLl loginBLl=new LoginBLl();
         StrictModeClass.StrictMode();
         if(loginBLl.checkUser(u.getEmail(),u.getPassword())){
+            
             Intent logIn= new Intent(MainActivity.this,DashboardActivity.class);
             startActivity(logIn);
             Toast.makeText(this, "Welcome ", Toast.LENGTH_SHORT).show();
