@@ -19,9 +19,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10sp"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:layout_margin="10sp"
         android:textColorHint="@color/colorAccent">
 
         <EditText
@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="20"
+            android:fontFamily="sans-serif-black"
             android:hint="First Name"
             android:inputType="text"
             android:textSize="20sp" />
@@ -37,8 +38,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="true"
         android:layout_margin="10sp"
+        android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/colorAccent">
 
@@ -47,7 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter Last Name"
+            android:fontFamily="sans-serif-black"
+            android:hint="Last Name"
             android:inputType="text"
             android:textSize="20sp" />
 
@@ -56,8 +58,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="true"
         android:layout_margin="10sp"
+        android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/colorAccent">
 
@@ -66,7 +68,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter Email"
+            android:fontFamily="sans-serif-black"
+            android:hint="Email"
+
             android:inputType="text"
             android:textSize="20sp" />
 
@@ -76,8 +80,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="true"
         android:layout_margin="10sp"
+        android:focusable="true"
         android:focusableInTouchMode="true"
         android:textColorHint="@color/colorAccent"
         app:passwordToggleEnabled="true">
@@ -87,7 +91,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter Password"
+            android:fontFamily="sans-serif-black"
+            android:hint="Password"
             android:inputType="textPassword"
             android:textSize="20sp" />
 
@@ -96,60 +101,68 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:focusable="true"
         android:layout_margin="10sp"
-app:passwordToggleEnabled="true"
+        android:focusable="true"
         android:focusableInTouchMode="true"
-        android:textColorHint="@color/colorAccent">
+        android:textColorHint="@color/colorAccent"
+        app:passwordToggleEnabled="true">
 
         <EditText
             android:id="@+id/signrepassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:fontFamily="sans-serif-black"
             android:hint="Confirm Password"
+
             android:inputType="textPassword"
             android:textSize="20sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
-        android:layout_margin="8sp"
         android:id="@+id/rdogender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8sp"
         android:layout_marginTop="15sp"
         android:orientation="horizontal">
 
         <TextView
-            android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Gender:"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorAccent"
             android:textSize="20sp" />
 
         <RadioButton
-            android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10sp"
-            android:text="Male"
             android:layout_marginRight="7sp"
+            android:text="Male"
+            android:fontFamily="sans-serif-black"
+
+            android:textColor="@color/colorAccent"
             android:textSize="20sp" />
 
         <RadioButton
-            android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="7sp"
             android:text="Female"
+            android:fontFamily="sans-serif-black"
+
+            android:textColor="@color/colorAccent"
             android:textSize="20sp" />
 
         <RadioButton
-            android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Other"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/colorAccent"
             android:textSize="20sp" />
 
 
@@ -161,6 +174,7 @@ app:passwordToggleEnabled="true"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_rounded"
+        android:fontFamily="sans-serif-black"
         android:text="Sign Up"
         android:textSize="22sp" />
 
