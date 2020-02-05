@@ -44,6 +44,9 @@ public interface Api {
         @GET("users/me")
         Call<Users>getUser(@Header("Authorization")String token);
 
+        @PATCH("users/update/{id}")
+        Call<Users>userUpdate(@Path("id")String id,@Body Users cud);
+
     }
 
 

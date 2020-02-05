@@ -14,6 +14,12 @@ public class Users {
         this.password = password;
     }
 
+    public Users(String first_name, String last_name, String gender) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.gender = gender;
+    }
+
     public Users(String _id, String first_name, String last_name, String gender, String email, String user_image, String password) {
         this._id = _id;
         this.first_name = first_name;
@@ -32,6 +38,7 @@ public class Users {
         this.user_image = user_image;
         this.password = password;
     }
+
 
     public String getFirst_name() {
         return first_name;
