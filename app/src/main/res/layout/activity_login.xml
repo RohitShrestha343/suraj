@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/auctionback"
     android:orientation="vertical"
     android:padding="30dp"
+    android:gravity="center"
     tools:context=".LoginActivity">
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/login" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -21,7 +19,7 @@
         android:focusable="true"
         android:layout_margin="10sp"
         android:focusableInTouchMode="true"
-        android:textColorHint="@color/colorAccent">
+        android:textColorHint="@color/colorlogin">
 
         <EditText
             android:id="@+id/etLogEmail"
@@ -41,7 +39,7 @@
         android:focusable="true"
         android:layout_margin="10sp"
         android:focusableInTouchMode="true"
-        android:textColorHint="@color/colorAccent"
+        android:textColorHint="@color/colorlogin"
         app:passwordToggleEnabled="true">
 
         <EditText
@@ -61,7 +59,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_rounded"
-        android:text="Sign Up"
+        android:text="Login"
         android:textSize="22sp" />
 
     <Button

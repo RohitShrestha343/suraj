@@ -129,6 +129,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (passw.equals(conpassw)) {
                                     Users users = new Users(firstname, lastname, radiosex.getText().toString(),emaill,imageView, passw );
                                         register(users);
+                                        Intent intent=new Intent(RegisterActivity.this,LoginActivity.class);
+                                        startActivity(intent);
                                 }
 
                             } else {
@@ -166,7 +168,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 Signup_response signup_respond = response.body();
                 if (signup_respond.getStatus().equals("Success")) {
-                    Toast.makeText(RegisterActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Sucessfully Registered", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Please Login", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(RegisterActivity.this, "Mail already exists", Toast.LENGTH_SHORT).show();
 
