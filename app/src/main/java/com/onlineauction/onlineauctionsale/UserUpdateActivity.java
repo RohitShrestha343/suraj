@@ -44,11 +44,11 @@ public class UserUpdateActivity extends AppCompatActivity {
     EditText firstnameup, lastnameup;
     Button btnUpdate;
     String oldName, id;
-    private String selected, imageName = "";
+    private String imageName = "";
     public static String token = "";
     public static final String base_url = "http://10.0.2.2:3000/";
     String imagePaths = base_url;
-    String imagePath;
+    String imagePath="";
     String sendp;
     String rImage;
     int count = 0;
