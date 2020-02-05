@@ -23,9 +23,8 @@ import com.onlineauction.onlineauctionsale.model.Users;
 public class LoginActivity extends AppCompatActivity {
     private EditText etLogEmail, etLogPassword;
     private Button btnLogin, btnLogRegister;
-    ImageButton btn_showpass;
     public String Token="";
-    private boolean isShowPassword = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,24 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         etLogPassword = findViewById(R.id.etLogPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnLogRegister = findViewById(R.id.btnLogRegister);
-        btn_showpass = findViewById(R.id.btn_showpass);
 
-        etLogPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-            }
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                btn_showpass.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
         btnLogRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,19 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 }else{
                     etLogEmail.setError("Please Enter Email");
-                }
-            }
-        });
-        btn_showpass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isShowPassword){
-                    etLogPassword.setTransformationMethod(new PasswordTransformationMethod());
-                    btn_showpass.setImageDrawable(getResources().getDrawable(R.drawable.eye));
-                    isShowPassword=false;
-                }else{
-                    etLogPassword.setTransformationMethod(null);
-                    btn_showpass.setImageDrawable(getResources().getDrawable(R.drawable.noeye));
                 }
             }
         });
