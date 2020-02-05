@@ -35,78 +35,77 @@
 22-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:14:9-41
 23        android:supportsRtl="true"
 23-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:15:9-35
-24        android:testOnly="true"
-25        android:theme="@android:style/Theme.DeviceDefault"
-25-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:16:9-59
-26        android:usesCleartextTraffic="true" >
-26-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:17:9-44
-27        <uses-library
-27-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:18:9-20:39
-28            android:name="com.google.android.wearable"
-28-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:19:13-55
-29            android:required="true" />
-29-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:20:13-36
-30
-31        <!--
-32               Set to true if your app is Standalone, that is, it does not require the handheld
-33               app to run.
-34        -->
-35        <meta-data
-35-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:26:9-28:36
-36            android:name="com.google.android.wearable.standalone"
-36-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:27:13-66
-37            android:value="true" />
-37-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:28:13-33
-38
-39        <activity
-39-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:30:9-38:20
-40            android:name="com.shrestharohit.onlineauctionsalewear.DashboardActivity"
-40-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:31:13-46
-41            android:label="@string/title_activity_dashboard" >
-41-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:32:13-61
-42            <intent-filter>
-42-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:33:13-37:29
-43                <action android:name="android.intent.action.MAIN" />
-43-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:17-69
-43-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:25-66
-44
-45                <category android:name="android.intent.category.LAUNCHER" />
-45-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:17-77
-45-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:27-74
-46            </intent-filter>
-47        </activity>
-48        <activity
-48-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:39:9-47:20
-49            android:name="com.shrestharohit.onlineauctionsalewear.MainActivity"
-49-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:40:13-41
-50            android:label="@string/app_name" >
-50-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:41:13-45
-51            <intent-filter>
-51-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:33:13-37:29
-52                <action android:name="android.intent.action.MAIN" />
-52-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:17-69
-52-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:25-66
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:17-77
-54-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:27-74
-55            </intent-filter>
-56        </activity>
-57        <activity
-57-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
-58            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-58-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
-59            android:exported="false"
-59-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
-60            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-60-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
-61
-62        <meta-data
-62-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\07a39069fef81cd6a2972f65492fd36b\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
-63            android:name="com.google.android.gms.version"
-63-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\07a39069fef81cd6a2972f65492fd36b\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
-64            android:value="@integer/google_play_services_version" />
-64-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\07a39069fef81cd6a2972f65492fd36b\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
-65    </application>
-66
-67</manifest>
+24        android:theme="@android:style/Theme.DeviceDefault"
+24-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:16:9-59
+25        android:usesCleartextTraffic="true" >
+25-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:17:9-44
+26        <uses-library
+26-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:18:9-20:39
+27            android:name="com.google.android.wearable"
+27-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:19:13-55
+28            android:required="true" />
+28-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:20:13-36
+29
+30        <!--
+31               Set to true if your app is Standalone, that is, it does not require the handheld
+32               app to run.
+33        -->
+34        <meta-data
+34-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:26:9-28:36
+35            android:name="com.google.android.wearable.standalone"
+35-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:27:13-66
+36            android:value="true" />
+36-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:28:13-33
+37
+38        <activity
+38-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:30:9-38:20
+39            android:name="com.shrestharohit.onlineauctionsalewear.DashboardActivity"
+39-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:31:13-46
+40            android:label="@string/title_activity_dashboard" >
+40-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:32:13-61
+41            <intent-filter>
+41-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:33:13-37:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:17-69
+42-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:17-77
+44-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:27-74
+45            </intent-filter>
+46        </activity>
+47        <activity
+47-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:39:9-47:20
+48            android:name="com.shrestharohit.onlineauctionsalewear.MainActivity"
+48-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:40:13-41
+49            android:label="@string/app_name" >
+49-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:41:13-45
+50            <intent-filter>
+50-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:33:13-37:29
+51                <action android:name="android.intent.action.MAIN" />
+51-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:17-69
+51-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:25-66
+52
+53                <category android:name="android.intent.category.LAUNCHER" />
+53-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:17-77
+53-->D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:27-74
+54            </intent-filter>
+55        </activity>
+56        <activity
+56-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+57            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+57-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+58            android:exported="false"
+58-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+59            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+59-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\2ff78a7ed63c24b2344704663c479e1d\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+60
+61        <meta-data
+61-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\07a39069fef81cd6a2972f65492fd36b\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+62            android:name="com.google.android.gms.version"
+62-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\07a39069fef81cd6a2972f65492fd36b\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
+63            android:value="@integer/google_play_services_version" />
+63-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\07a39069fef81cd6a2972f65492fd36b\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+64    </application>
+65
+66</manifest>

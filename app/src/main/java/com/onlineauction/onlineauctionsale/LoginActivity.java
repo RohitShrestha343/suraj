@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent logIn= new Intent(LoginActivity.this,AdminDashboardActivity.class);
             logIn.putExtra("token",Token);
             startActivity(logIn);
-            Toast.makeText(this, "Welcome "+ Token, Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(this, "Welcome "+ Token, Toast.LENGTH_SHORT).show();
             return true;
         }
         Toast.makeText(this, "Either Username or Passoword is incorrect", Toast.LENGTH_SHORT).show();

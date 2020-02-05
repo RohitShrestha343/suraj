@@ -41,6 +41,9 @@ public interface Api {
         @PATCH("product/bid/{id}")
         Call<Bidm> getBid( @Path("id") String bid, @Header("Authorization") String s ,@Field("highest_bid") String highest_bid);
 
+        @GET("users/me")
+        Call<Users>getUser(@Header("Authorization")String token);
+
     }
 
 
