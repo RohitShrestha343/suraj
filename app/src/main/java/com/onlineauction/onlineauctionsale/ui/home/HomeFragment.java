@@ -44,8 +44,6 @@ public class HomeFragment extends Fragment {
         return view;
     }
     private void loadCurrentUser(String token) {
-
-
         ApiClass usersAPI = new ApiClass();
         Call<List<ProductsData>> userCall=usersAPI.calls().getproducts(token);
         userCall.enqueue(new Callback<List<ProductsData>>() {

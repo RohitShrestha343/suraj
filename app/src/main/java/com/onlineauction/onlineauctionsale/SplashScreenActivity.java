@@ -3,12 +3,16 @@ package com.onlineauction.onlineauctionsale;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 
-public class SplashScreenActivity extends AppCompatActivity {
+import com.onlineauction.onlineauctionsale.channel.BroadcastReceiverExample;
 
+public class SplashScreenActivity extends AppCompatActivity {
+BroadcastReceiverExample broadcastReceiverExample=new BroadcastReceiverExample();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,5 +38,15 @@ public class SplashScreenActivity extends AppCompatActivity {
 
             }
         },2000);
+    }
+    protected void onStart() {
+        super.onStart();
+        IntentFilter intentFilter=new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(broadcastReceiverExample,intentFilter);
+    }
+    protected void onStop() {
+
+        super.onStop();
+        unregisterReceiver(broadcastReceiverExample);
     }
 }

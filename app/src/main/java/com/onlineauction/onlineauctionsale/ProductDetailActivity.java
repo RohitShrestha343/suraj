@@ -1,7 +1,10 @@
 package com.onlineauction.onlineauctionsale;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -16,6 +19,8 @@ import android.widget.Toast;
 import com.onlineauction.onlineauctionsale.StrictModeClass.StrictModeClass;
 import com.onlineauction.onlineauctionsale.api.ApiClass;
 import com.onlineauction.onlineauctionsale.bll.LoginBLl;
+import com.onlineauction.onlineauctionsale.channel.BroadcastReceiverExample;
+import com.onlineauction.onlineauctionsale.channel.CreateChannel;
 import com.onlineauction.onlineauctionsale.model.Bidm;
 import com.onlineauction.onlineauctionsale.model.Bidmodel;
 import com.onlineauction.onlineauctionsale.model.ProductsData;
@@ -32,11 +37,14 @@ import retrofit2.Response;
 
 public class ProductDetailActivity extends AppCompatActivity {
 
+    private NotificationManagerCompat notificationManagerCompat;
     ImageView product_Image;
-    TextView product_name, product_category, base_price, start_date, end_date, highest_bid,email;
+    TextView product_name, product_category, base_price, start_date, end_date, highest_bid, email;
     Button bit_button;
     EditText amount;
     String id;
+    private int counter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +59,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         end_date = findViewById(R.id.end_date);
         highest_bid = findViewById(R.id.highest_bid);
         bit_button = findViewById(R.id.bit_button);
-        email=findViewById(R.id.email);
+        email = findViewById(R.id.email);
 
         amount = findViewById(R.id.amount);
 
@@ -76,6 +84,9 @@ public class ProductDetailActivity extends AppCompatActivity {
             end_date.setText(bundle.getString("end_date"));
             highest_bid.setText(bundle.getString("highest_bid"));
             email.setText(bundle.getString("email"));
+            notificationManagerCompat=NotificationManagerCompat.from(this);
+            CreateChannel channel=new CreateChannel(this);
+            channel.createChannel();
 
 
         }
@@ -87,13 +98,15 @@ public class ProductDetailActivity extends AppCompatActivity {
                 Hnum = Integer.parseInt(highest_bid.getText().toString());
                 int getnum = Integer.parseInt(amount.getText().toString());
                 if (Hnum < getnum) {
-                    String token = "Bearer "+new LoginBLl().Token;
+                    String token = "Bearer " + new LoginBLl().Token;
                     setNew(token, amount.getText().toString());
 
                     Intent intent = new Intent(ProductDetailActivity.this, AdminDashboardActivity.class);
                     startActivity(intent);
+                    DisplayNotification();
+                    counter++;
                 } else {
-                     Toast.makeText(ProductDetailActivity.this, "Bid must be more", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductDetailActivity.this, "Bid must be more", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -122,5 +135,14 @@ public class ProductDetailActivity extends AppCompatActivity {
                 Log.d("error", "error  " + t.getLocalizedMessage());
             }
         });
+    }
+    private void DisplayNotification(){
+        Notification notification=new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+                .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
+                .setContentTitle("Bid Placed ")
+                .setContentText("Your Bid Has been Successfully placed")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManagerCompat.notify(counter,notification);
     }
 }

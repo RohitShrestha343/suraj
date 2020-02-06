@@ -2,6 +2,9 @@
     <string name="app_name">OnlineAuctionSale</string>
     <string name="title_activity_admin_dashboard">AdminDashboardActivity</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Add Items</string>
+    <string name="title_dashboard">My Account</string>
     <string name="title_notifications">About US</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

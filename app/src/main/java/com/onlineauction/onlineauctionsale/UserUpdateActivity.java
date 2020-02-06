@@ -155,12 +155,12 @@ public class UserUpdateActivity extends AppCompatActivity {
         ApiClass usersAPI = new ApiClass();
 
         Call<ImageModel> responseBodyCall = usersAPI.calls().uploadImage(body);
-
         StrictModeClass.StrictMode();
 
         try {
             Response<ImageModel> imageResponseResponse = responseBodyCall.execute();
             imageName = imageResponseResponse.body().getFilename();
+            Toast.makeText(this, ""+imageName, Toast.LENGTH_SHORT).show();
 
 
         } catch (IOException e) {
