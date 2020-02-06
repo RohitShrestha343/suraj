@@ -31,5 +31,6 @@ public class NotificationsFragment extends Fragment {
             }
         });
         return root;
+//        Intent intent=new Intent(getActivity(), MapsActivity.class);
     }
 }

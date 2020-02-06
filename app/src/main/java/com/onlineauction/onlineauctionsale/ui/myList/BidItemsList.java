@@ -10,7 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.onlineauction.onlineauctionsale.LoginActivity;
 import com.onlineauction.onlineauctionsale.R;
+import com.onlineauction.onlineauctionsale.api.ApiClass;
+import com.onlineauction.onlineauctionsale.model.MyProductModel;
+
+import java.util.List;
+
+import retrofit2.Call;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +35,17 @@ View view;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bid_items_list, container, false);
+       view = inflater.inflate(R.layout.fragment_bid_items_list, container, false);
+
+        myrecycler=view.findViewById(R.id.MyRecycle);
+        String token=new LoginActivity().Token;
+        return view;
     }
+
+//    public void LoadMyProducts(String token){
+//        ApiClass apiClass=new ApiClass();
+//        Call<List<MyProductModel>>productCall=apiClass.calls().
+//
+//    }
 
 }

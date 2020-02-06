@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.app.AlertDialog;
 import android.app.Notification;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +26,7 @@ import com.onlineauction.onlineauctionsale.channel.BroadcastReceiverExample;
 import com.onlineauction.onlineauctionsale.channel.CreateChannel;
 import com.onlineauction.onlineauctionsale.model.Bidm;
 import com.onlineauction.onlineauctionsale.model.Bidmodel;
+import com.onlineauction.onlineauctionsale.model.MyProductModel;
 import com.onlineauction.onlineauctionsale.model.ProductsData;
 import com.onlineauction.onlineauctionsale.model.Signup_response;
 
@@ -30,6 +34,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,8 +45,10 @@ public class ProductDetailActivity extends AppCompatActivity {
     private NotificationManagerCompat notificationManagerCompat;
     ImageView product_Image;
     TextView product_name, product_category, base_price, start_date, end_date, highest_bid, email;
-    Button bit_button;
+    Button bit_button, add_button;
     EditText amount;
+    String Iname;
+    AlertDialog.Builder builder;
     String id;
 
 
@@ -59,6 +66,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         highest_bid = findViewById(R.id.highest_bid);
         bit_button = findViewById(R.id.bit_button);
         email = findViewById(R.id.email);
+        add_button = findViewById(R.id.add_button);
 
         amount = findViewById(R.id.amount);
 
@@ -83,8 +91,9 @@ public class ProductDetailActivity extends AppCompatActivity {
             end_date.setText(bundle.getString("end_date"));
             highest_bid.setText(bundle.getString("highest_bid"));
             email.setText(bundle.getString("email"));
-            notificationManagerCompat=NotificationManagerCompat.from(this);
-            CreateChannel channel=new CreateChannel(this);
+            notificationManagerCompat = NotificationManagerCompat.from(this);
+            CreateChannel channel = new CreateChannel(this);
+            builder = new AlertDialog.Builder(this);
             channel.createChannel();
 
 
@@ -109,8 +118,58 @@ public class ProductDetailActivity extends AppCompatActivity {
                 }
             }
         });
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                builder.setMessage("DO you want to add?").setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                String prodname = product_name.getText().toString();
+                                String baseprice = base_price.getText().toString();
+                                String enddate = end_date.getText().toString();
+                                SharedPreferences sharedPreferences = getSharedPreferences("Users", MODE_PRIVATE);
+                                String usermail = sharedPreferences.getString("email", "");
+                                MyProductModel myProductModel = new MyProductModel("Iname", prodname, baseprice, enddate, usermail);
+                                String token = "Bearer" + LoginBLl.Token;
+                                Toast.makeText(ProductDetailActivity.this, "" + token, Toast.LENGTH_SHORT).show();
+                            AddMyProduct(token,myProductModel);
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                        Toast.makeText(ProductDetailActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                AlertDialog alert = builder.create();
+                alert.setTitle("MY Products");
+                alert.show();
+            }
+        });
 
     }
+
+    public void AddMyProduct(String token, MyProductModel myProductModel) {
+        ApiClass apiClass = new ApiClass();
+        Call<List<MyProductModel>> myproductlist = apiClass.calls().addmyproduct(token, myProductModel);
+        myproductlist.enqueue(new Callback<List<MyProductModel>>() {
+            @Override
+            public void onResponse(Call<List<MyProductModel>> call, Response<List<MyProductModel>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(ProductDetailActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(ProductDetailActivity.this, "add product", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<List<MyProductModel>> call, Throwable t) {
+
+            }
+        });
+    }
+
 
     public void setNew(String token, String bid) {
         ApiClass apiClass = new ApiClass();
@@ -135,13 +194,16 @@ public class ProductDetailActivity extends AppCompatActivity {
             }
         });
     }
-    private void DisplayNotification(){
-        Notification notification=new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+
+    private void DisplayNotification() {
+        Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
                 .setContentTitle("Bid Placed ")
                 .setContentText("Your Bid Has been Successfully placed")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
-        notificationManagerCompat.notify(1,notification);
+        notificationManagerCompat.notify(1, notification);
     }
+
+
 }
