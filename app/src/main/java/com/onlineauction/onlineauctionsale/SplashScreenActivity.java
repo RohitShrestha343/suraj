@@ -48,4 +48,5 @@ BroadcastReceiverExample broadcastReceiverExample=new BroadcastReceiverExample()
         super.onStop();
         unregisterReceiver(broadcastReceiverExample);
     }
+
 }

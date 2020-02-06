@@ -86,5 +86,6 @@ private float mAccelLast;
         mSensorManager.unregisterListener(mSensorListener);
         super.onPause();
     }
+
 }
 
