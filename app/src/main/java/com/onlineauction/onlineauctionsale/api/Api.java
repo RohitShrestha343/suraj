@@ -2,6 +2,7 @@ package com.onlineauction.onlineauctionsale.api;
 import com.onlineauction.onlineauctionsale.model.Bidm;
 import com.onlineauction.onlineauctionsale.model.Bidmodel;
 import com.onlineauction.onlineauctionsale.model.ImageModel;
+import com.onlineauction.onlineauctionsale.model.MyProductModel;
 import com.onlineauction.onlineauctionsale.model.ProductsData;
 import com.onlineauction.onlineauctionsale.model.Signup_response;
 import com.onlineauction.onlineauctionsale.model.Users;
@@ -47,6 +48,8 @@ public interface Api {
         @PATCH("users/update/{id}")
         Call<Users>userUpdate(@Path("id")String id,@Body Users cud);
 
+        @POST("myproduct/addmyproduct")
+        Call<List<MyProductModel>> addmyproduct(@Header("Authorization") String token, @Body MyProductModel myProductModel);
     }
 
 

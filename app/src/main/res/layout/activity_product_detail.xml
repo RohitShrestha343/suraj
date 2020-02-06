@@ -205,6 +205,4 @@
             android:text="Bid" />
 
     </LinearLayout>
-
-
 </ScrollView>

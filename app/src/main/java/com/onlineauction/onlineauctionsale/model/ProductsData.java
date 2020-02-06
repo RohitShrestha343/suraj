@@ -22,7 +22,6 @@ public class ProductsData {
         this.email = email;
     }
 
-
     public ProductsData(String _id, String product_Image, String product_name, String product_category, String base_price, String start_date, String end_date, String highest_bid, String email) {
         this._id = _id;
         this.product_Image = product_Image;
