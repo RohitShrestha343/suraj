@@ -17,7 +17,7 @@ public class BroadcastReceiverExample extends BroadcastReceiver {
             if(noConnectivity){
                 Toast.makeText(context, "Disconnected", Toast.LENGTH_SHORT).show();
             }else {
-                Toast.makeText(context, "Connected", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Connected to WiFi", Toast.LENGTH_SHORT).show();
             }
         }
     }

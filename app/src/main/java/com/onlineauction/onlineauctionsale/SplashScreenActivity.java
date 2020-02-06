@@ -45,7 +45,6 @@ BroadcastReceiverExample broadcastReceiverExample=new BroadcastReceiverExample()
         registerReceiver(broadcastReceiverExample,intentFilter);
     }
     protected void onStop() {
-
         super.onStop();
         unregisterReceiver(broadcastReceiverExample);
     }
