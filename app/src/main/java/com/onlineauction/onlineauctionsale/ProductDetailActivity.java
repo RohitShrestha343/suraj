@@ -43,7 +43,6 @@ public class ProductDetailActivity extends AppCompatActivity {
     Button bit_button;
     EditText amount;
     String id;
-    private int counter;
 
 
     @Override
@@ -104,7 +103,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                     Intent intent = new Intent(ProductDetailActivity.this, AdminDashboardActivity.class);
                     startActivity(intent);
                     DisplayNotification();
-                    counter++;
+
                 } else {
                     Toast.makeText(ProductDetailActivity.this, "Bid must be more", Toast.LENGTH_SHORT).show();
                 }
@@ -143,6 +142,6 @@ public class ProductDetailActivity extends AppCompatActivity {
                 .setContentText("Your Bid Has been Successfully placed")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
-        notificationManagerCompat.notify(counter,notification);
+        notificationManagerCompat.notify(1,notification);
     }
 }

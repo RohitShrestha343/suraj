@@ -1,7 +1,10 @@
 package com.onlineauction.onlineauctionsale;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,9 +21,11 @@ import android.widget.Toast;
 
 import com.onlineauction.onlineauctionsale.StrictModeClass.StrictModeClass;
 import com.onlineauction.onlineauctionsale.bll.LoginBLl;
+import com.onlineauction.onlineauctionsale.channel.CreateChannel;
 import com.onlineauction.onlineauctionsale.model.Users;
 
 public class LoginActivity extends AppCompatActivity {
+    private NotificationManagerCompat notificationManagerCompat;
     private EditText etLogEmail, etLogPassword;
     private Button btnLogin, btnLogRegister;
     public String Token="";
@@ -35,6 +40,9 @@ public class LoginActivity extends AppCompatActivity {
         etLogPassword = findViewById(R.id.etLogPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnLogRegister = findViewById(R.id.btnLogRegister);
+        notificationManagerCompat=NotificationManagerCompat.from(this);
+        CreateChannel channel=new CreateChannel(this);
+        channel.createChannel();
 
 
 
@@ -82,10 +90,21 @@ public class LoginActivity extends AppCompatActivity {
             Intent logIn= new Intent(LoginActivity.this,AdminDashboardActivity.class);
             logIn.putExtra("token",Token);
             startActivity(logIn);
+            DisplayNotification();
           //  Toast.makeText(this, "Welcome "+ Token, Toast.LENGTH_SHORT).show();
             return true;
         }
         Toast.makeText(this, "Either Username or Passoword is incorrect", Toast.LENGTH_SHORT).show();
         return false;
+    }
+
+    private void DisplayNotification(){
+        Notification notification=new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+                .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
+                .setContentTitle("Login Success ")
+                .setContentText("You have Successfully Logged in")
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManagerCompat.notify(1,notification);
     }
 }
