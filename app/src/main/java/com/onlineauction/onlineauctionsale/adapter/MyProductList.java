@@ -1,6 +1,7 @@
 package com.onlineauction.onlineauctionsale.adapter;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,18 +12,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.onlineauction.onlineauctionsale.R;
+import com.onlineauction.onlineauctionsale.StrictModeClass.StrictModeClass;
+import com.onlineauction.onlineauctionsale.model.MyProductModel;
 import com.onlineauction.onlineauctionsale.model.ProductsData;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 public class MyProductList extends RecyclerView.Adapter<MyProductList.MyProductsViewHolder> {
     Context context;
-    List<ProductsData> productsDataList;
+    List<MyProductModel> productsDataList;
 
     public static final String base_url = "http://10.0.2.2:3000/";
     String imagePath = base_url;
 
-    public MyProductList(Context context, List<ProductsData> productsDataList, String imagePath) {
+    public MyProductList(Context context, List<MyProductModel> productsDataList, String imagePath) {
         this.context = context;
         this.productsDataList = productsDataList;
         this.imagePath = imagePath;
@@ -37,12 +42,24 @@ public class MyProductList extends RecyclerView.Adapter<MyProductList.MyProducts
 
     @Override
     public void onBindViewHolder(@NonNull MyProductList.MyProductsViewHolder holder, int position) {
+final MyProductModel myProductModel=productsDataList.get(position);
+        holder.myproductName.setText(myProductModel.getProduct_name());
+    holder.mybase_price.setText(myProductModel.getBase_price());
+        holder.myend_date.setText(myProductModel.getEnd_date());
 
+        StrictModeClass.StrictMode();
+        String imgPath = imagePath + myProductModel.getProduct_Image();
+        try {
+            URL url = new URL(imgPath);
+            holder.myprodImage.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return productsDataList.size();
     }
 
     public class MyProductsViewHolder extends RecyclerView.ViewHolder {
@@ -51,7 +68,10 @@ public class MyProductList extends RecyclerView.Adapter<MyProductList.MyProducts
 
         public MyProductsViewHolder(@NonNull View itemView) {
             super(itemView);
-
+            myprodImage=itemView.findViewById(R.id.myproductimage);
+            myproductName=itemView.findViewById(R.id.myprodname);
+            mybase_price=itemView.findViewById(R.id.myproductbaseprice);
+            myend_date=itemView.findViewById(R.id.myproductenddate);
         }
     }
 }

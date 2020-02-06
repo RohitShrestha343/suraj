@@ -19,7 +19,7 @@
         >
 
         <ImageView
-            android:id="@+id/myproduct"
+            android:id="@+id/myproductimage"
             android:layout_width="match_parent"
             android:layout_height="220dp"
             app:layout_constraintStart_toStartOf="parent"
