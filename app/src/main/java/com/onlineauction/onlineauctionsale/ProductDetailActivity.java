@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,11 +46,12 @@ public class ProductDetailActivity extends AppCompatActivity {
     private NotificationManagerCompat notificationManagerCompat;
     ImageView product_Image;
     TextView product_name, product_category, base_price, start_date, end_date, highest_bid, email;
-    Button bit_button, add_button;
+    Button bit_button;
     EditText amount;
     String Iname;
     AlertDialog.Builder builder;
     String id;
+    String img_name;
 
 
     @Override
@@ -66,7 +68,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         highest_bid = findViewById(R.id.highest_bid);
         bit_button = findViewById(R.id.bit_button);
         email = findViewById(R.id.email);
-        add_button = findViewById(R.id.add_button);
+
 
         amount = findViewById(R.id.amount);
 
@@ -74,7 +76,8 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         if (bundle != null) {
             String imagepath = bundle.getString("image");
-
+            Iname = bundle.getString("image");
+            img_name=bundle.getString("imagename");
             try {
                 URL url = new URL(imagepath);
                 product_Image.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
@@ -102,54 +105,59 @@ public class ProductDetailActivity extends AppCompatActivity {
         bit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int Hnum = 0;
-                Hnum = Integer.parseInt(highest_bid.getText().toString());
-                int getnum = Integer.parseInt(amount.getText().toString());
-                if (Hnum < getnum) {
-                    String token = "Bearer " + new LoginBLl().Token;
-                    setNew(token, amount.getText().toString());
+                if(!TextUtils.isEmpty(amount.getText().toString())){
+                    int Hnum = 0;
+                    Hnum = Integer.parseInt(highest_bid.getText().toString());
+                    int getnum = Integer.parseInt(amount.getText().toString());
+                    if (Hnum < getnum) {
+                        String token = "Bearer " + new LoginBLl().Token;
+                        setNew(token, amount.getText().toString());
+                            PlaceMyProduct();
 
-                    Intent intent = new Intent(ProductDetailActivity.this, AdminDashboardActivity.class);
-                    startActivity(intent);
-                    DisplayNotification();
 
-                } else {
-                    Toast.makeText(ProductDetailActivity.this, "Bid must be more", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        add_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                builder.setMessage("DO you want to add?").setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                String prodname = product_name.getText().toString();
-                                String baseprice = base_price.getText().toString();
-                                String enddate = end_date.getText().toString();
-                                SharedPreferences sharedPreferences = getSharedPreferences("Users", MODE_PRIVATE);
-                                String usermail = sharedPreferences.getString("email", "");
-                                MyProductModel myProductModel = new MyProductModel("Iname", prodname, baseprice, enddate, usermail);
-                                String token = "Bearer" + LoginBLl.Token;
-                                Toast.makeText(ProductDetailActivity.this, "" + token, Toast.LENGTH_SHORT).show();
-                            AddMyProduct(token,myProductModel);
-                            }
-                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                        Toast.makeText(ProductDetailActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(ProductDetailActivity.this, "Bid must be more", Toast.LENGTH_SHORT).show();
                     }
-                });
-                AlertDialog alert = builder.create();
-                alert.setTitle("MY Products");
-                alert.show();
+
+                    }else {
+                    amount.setError("Please Enter the amount to bid");
+                }
+
             }
         });
 
     }
+public void PlaceMyProduct(){
+    builder.setMessage("DO you want to add?").setCancelable(false)
+            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
 
+                    String prodname = product_name.getText().toString();
+                    String baseprice = base_price.getText().toString();
+                    String enddate = end_date.getText().toString();
+                    SharedPreferences sharedPreferences = getSharedPreferences("User", MODE_PRIVATE);
+                    String usermail = sharedPreferences.getString("username","");
+
+                    MyProductModel myProductModel = new MyProductModel(img_name, prodname, baseprice, enddate, usermail);
+                    String token = "Bearer " + LoginBLl.Token;
+                    Toast.makeText(ProductDetailActivity.this, "" + token, Toast.LENGTH_SHORT).show();
+                    AddMyProduct(token, myProductModel);
+                    Intent intent = new Intent(ProductDetailActivity.this, AdminDashboardActivity.class);
+                    startActivity(intent);
+                    DisplayNotification();
+                }
+            }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialogInterface, int i) {
+            dialogInterface.cancel();
+            Toast.makeText(ProductDetailActivity.this, "Canceled", Toast.LENGTH_SHORT).show();
+        }
+    });
+    AlertDialog alert = builder.create();
+    alert.setTitle("Do you want to Save this Product?");
+    alert.show();
+}
     public void AddMyProduct(String token, MyProductModel myProductModel) {
         ApiClass apiClass = new ApiClass();
         Call<List<MyProductModel>> myproductlist = apiClass.calls().addmyproduct(token, myProductModel);
@@ -198,8 +206,8 @@ public class ProductDetailActivity extends AppCompatActivity {
     private void DisplayNotification() {
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_add_alert_black_24dp)
-                .setContentTitle("Bid Placed ")
-                .setContentText("Your Bid Has been Successfully placed")
+                .setContentTitle("Product Added ")
+                .setContentText("Bid has been Successfully placed and product has been added.")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
         notificationManagerCompat.notify(1, notification);

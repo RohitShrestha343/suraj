@@ -62,6 +62,7 @@ public class ProductListApt extends RecyclerView.Adapter<ProductListApt.Products
                 intent.putExtra("id", productsData.get_id());
 //                Toast.makeText(context, "product id"+productsData.get_id(), Toast.LENGTH_SHORT).show();
                 intent.putExtra("image", imagepath);
+                intent.putExtra("imagename", productsData.getProduct_Image());
                 intent.putExtra("name", productsData.getProduct_name());
                 intent.putExtra("category", productsData.getProduct_category());
                 intent.putExtra("base_price", productsData.getBase_price());
@@ -92,7 +93,7 @@ public class ProductListApt extends RecyclerView.Adapter<ProductListApt.Products
     public class ProductsViewHolder extends RecyclerView.ViewHolder {
 
         ImageView prodImage;
-        TextView productName, productCategory, base_price, start_date, end_date, highest_bid,email;
+        TextView productName, productCategory, base_price, start_date, end_date, highest_bid, email;
         EditText amount;
         Button bit_button;
 
@@ -107,7 +108,7 @@ public class ProductListApt extends RecyclerView.Adapter<ProductListApt.Products
             highest_bid = itemView.findViewById(R.id.ProdHighestBid);
             amount = itemView.findViewById(R.id.amount);
             bit_button = itemView.findViewById(R.id.bit_button);
-            email=itemView.findViewById(R.id.email);
+            email = itemView.findViewById(R.id.email);
 
         }
     }
