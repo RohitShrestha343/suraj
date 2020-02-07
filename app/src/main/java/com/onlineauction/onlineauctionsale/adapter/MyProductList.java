@@ -27,10 +27,9 @@ public class MyProductList extends RecyclerView.Adapter<MyProductList.MyProducts
     public static final String base_url = "http://10.0.2.2:3000/";
     String imagePath = base_url;
 
-    public MyProductList(Context context, List<MyProductModel> productsDataList, String imagePath) {
+    public MyProductList(Context context, List<MyProductModel> productsDataList) {
         this.context = context;
         this.productsDataList = productsDataList;
-        this.imagePath = imagePath;
     }
 
     @NonNull

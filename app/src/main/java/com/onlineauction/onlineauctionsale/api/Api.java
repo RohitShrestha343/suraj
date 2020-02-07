@@ -50,6 +50,9 @@ public interface Api {
 
         @POST("myproduct/addmyproduct")
         Call<List<MyProductModel>> addmyproduct(@Header("Authorization") String token, @Body MyProductModel myProductModel);
+
+        @GET("myproduct/myproducts")
+        Call<List<MyProductModel>>myproducts(@Header("Authorization")String token);
     }
 
 
