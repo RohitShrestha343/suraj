@@ -55,7 +55,7 @@ public class MainActivity extends WearableActivity {
             
             Intent logIn= new Intent(MainActivity.this,DashboardActivity.class);
             startActivity(logIn);
-            Toast.makeText(this, "Welcome ", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, " ", Toast.LENGTH_SHORT).show();
             return true;
         }
         Toast.makeText(this, "Either Username or Password is incorrect", Toast.LENGTH_SHORT).show();
