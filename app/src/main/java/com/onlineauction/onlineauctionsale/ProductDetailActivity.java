@@ -10,6 +10,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -44,6 +48,10 @@ import retrofit2.Response;
 public class ProductDetailActivity extends AppCompatActivity {
 
     private NotificationManagerCompat notificationManagerCompat;
+    private SensorManager mSensorManager;
+    private Sensor mProximity;
+    SensorEventListener sel;
+    private static final int SENSOR_SENSITIVITY = 4;
     ImageView product_Image;
     TextView product_name, product_category, base_price, start_date, end_date, highest_bid, email;
     Button bit_button;
@@ -71,6 +79,35 @@ public class ProductDetailActivity extends AppCompatActivity {
 
 
         amount = findViewById(R.id.amount);
+
+        mSensorManager=(SensorManager)getSystemService(this.SENSOR_SERVICE);
+        mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+        sel=new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent sensorEvent) {
+                if (sensorEvent.sensor.getType() == Sensor.TYPE_PROXIMITY) {
+                    if (sensorEvent.values[0] >= -SENSOR_SENSITIVITY && sensorEvent.values[0] <= SENSOR_SENSITIVITY) {
+                        bit_button.setEnabled(false);
+                    } else {
+                        bit_button.setEnabled(true);
+                    }
+                }
+            }
+
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int i) {
+
+            }
+        };
+        if (mProximity != null) {
+            mSensorManager.registerListener(sel, mProximity, SensorManager.SENSOR_DELAY_NORMAL);
+        } else {
+            Toast.makeText(this, "NO SENSOR DETECTED", Toast.LENGTH_SHORT).show();
+        }
+
+
 
         Bundle bundle = getIntent().getExtras();
 
