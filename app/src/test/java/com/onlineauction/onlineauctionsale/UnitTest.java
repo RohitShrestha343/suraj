@@ -33,6 +33,25 @@ public class UnitTest {
 
     }
 
+    @Test
+    public void Test_Login() {
+
+        Users users = new Users( "helina@gmail.com", "helina" );
+        ApiClass apiClass = new ApiClass();
+        Call<Signup_response> regiscall = apiClass.calls().checkUser( users.getEmail(), users.getPassword() );
+        try {
+            Response<Signup_response> loginResponse = regiscall.execute();
+            Signup_response loginresponse = loginResponse.body();
+
+            assertTrue( loginResponse.isSuccessful() && (!loginresponse.getToken().isEmpty()) );
+
+
+        } catch (IOException e) {
+            System.out.println( e );
+        }
+
+
+    }
 
 
 
