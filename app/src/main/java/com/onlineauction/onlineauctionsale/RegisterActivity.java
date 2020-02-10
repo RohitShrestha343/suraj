@@ -110,7 +110,6 @@ public class RegisterActivity extends AppCompatActivity {
                     Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
         }
     }
-
     public void SignupMode() {
         if (!TextUtils.isEmpty(first_name.getText().toString())) {
             if (!TextUtils.isEmpty(last_name.getText().toString())) {

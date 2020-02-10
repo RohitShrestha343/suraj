@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
+ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\0e824069575544f29b31b8c13620acf7\jetified-wearable-2.4.0\AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.android.gms:play-services-wearable:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\088321f938734ae40f308daf01e14355\jetified-play-services-wearable-16.0.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.percentlayout:percentlayout:1.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\b0ad6258a309f065c2aa438f6e04ff30\percentlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -41,20 +41,20 @@ MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\DELL\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\63647da4654da12a6f2785cfbbad8123\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\733fc1d306cee2c05d3e1fb0b7527020\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
-INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
 	package
 		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:3:5-54
 		INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml
 		INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml
-		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
+		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml
-		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-50:12
+		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:2:11-69
@@ -71,7 +71,7 @@ ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\
 	android:name
 		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:9:22-64
 application
-ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:11:5-48:19
+ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:11:5-43:19
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\0e824069575544f29b31b8c13620acf7\jetified-wearable-2.4.0\AndroidManifest.xml:9:5-13:19
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\0e824069575544f29b31b8c13620acf7\jetified-wearable-2.4.0\AndroidManifest.xml:9:5-13:19
 MERGED from [com.google.android.gms:play-services-wearable:16.0.1] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\088321f938734ae40f308daf01e14355\jetified-play-services-wearable-16.0.1\AndroidManifest.xml:22:5-20
@@ -117,27 +117,27 @@ ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\
 	android:name
 		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:27:13-66
 activity#com.shrestharohit.onlineauctionsalewear.DashboardActivity
-ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:30:9-38:20
+ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:30:9-33:20
 	android:label
 		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:32:13-61
 	android:name
 		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:31:13-46
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:33:13-37:29
-action#android.intent.action.MAIN
-ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:17-69
-	android:name
-		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:25-66
-category#android.intent.category.LAUNCHER
-ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:17-77
-	android:name
-		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:27-74
 activity#com.shrestharohit.onlineauctionsalewear.MainActivity
-ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:39:9-47:20
+ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:34:9-42:20
 	android:label
-		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:41:13-45
+		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:36:13-45
 	android:name
-		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:40:13-41
+		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:35:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:37:13-41:29
+action#android.intent.action.MAIN
+ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:38:17-69
+	android:name
+		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:38:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:40:17-77
+	android:name
+		ADDED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml:40:27-74
 uses-sdk
 INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\stw300cem-final-assignment-RohitShrestha343\onlineauctionsalewear\src\main\AndroidManifest.xml

@@ -1,5 +1,6 @@
 package com.onlineauction.onlineauctionsale.ui.notifications;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.onlineauction.onlineauctionsale.R;
+import com.onlineauction.onlineauctionsale.SearchActivity;
 
 public class NotificationsFragment extends Fragment {
 
@@ -30,7 +32,10 @@ public class NotificationsFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        Intent intent=new Intent(getContext(),SearchActivity.class);
+        startActivity(intent);
         return root;
-//        Intent intent=new Intent(getActivity(), MapsActivity.class);
+
+
     }
 }
