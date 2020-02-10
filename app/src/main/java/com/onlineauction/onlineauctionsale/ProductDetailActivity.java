@@ -142,7 +142,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         bit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!TextUtils.isEmpty(amount.getText().toString())){
+             try{
+                 if(!TextUtils.isEmpty(amount.getText().toString())){
                     int Hnum = 0;
                     Hnum = Integer.parseInt(highest_bid.getText().toString());
                     int getnum = Integer.parseInt(amount.getText().toString());
@@ -158,7 +159,10 @@ public class ProductDetailActivity extends AppCompatActivity {
 
                     }else {
                     amount.setError("Please Enter the amount to bid");
-                }
+                }}
+             catch (Exception e){
+                 e.printStackTrace();
+             }
 
             }
         });
