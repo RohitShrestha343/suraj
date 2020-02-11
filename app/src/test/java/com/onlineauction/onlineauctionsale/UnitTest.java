@@ -68,5 +68,19 @@ public class UnitTest {
             System.out.println(e);
         }
     }
+    @Test
+    public void UserUpdate(){
+        Users users=new Users("sajik","Shrestha","Male");
+        ApiClass usersAPI = new ApiClass();
+        Call<Users> updateCall = usersAPI.calls().userUpdate("5e2fee6fdbbb222e303d8747",users);
+        try{
+            Response<Users>usersudpateresponse = updateCall.execute();
+            assertTrue(usersudpateresponse.isSuccessful());
+        }catch (IOException e){
+            System.out.println(e);
+        }
+
+    }
+
 }
 
