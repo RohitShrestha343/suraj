@@ -3,12 +3,14 @@ package com.onlineauction.onlineauctionsale;
 import com.onlineauction.onlineauctionsale.api.ApiClass;
 import com.onlineauction.onlineauctionsale.model.Bidm;
 import com.onlineauction.onlineauctionsale.model.Bidmodel;
+import com.onlineauction.onlineauctionsale.model.MyProductModel;
 import com.onlineauction.onlineauctionsale.model.Signup_response;
 import com.onlineauction.onlineauctionsale.model.Users;
 
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -81,6 +83,24 @@ public class UnitTest {
         }
 
     }
+    @Test
+    public void Cart(){
+        MyProductModel myProductModel=new MyProductModel("asd.jpg","Computer","1200","2020","sajik.shrestha@gmail.com");
+        ApiClass apiClass = new ApiClass();
+        Call<List<MyProductModel>> myproductlist = apiClass.calls().addmyproduct("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGluYUBnbWFpbC5jb20iLCJfaWQiOiI1ZTNhZmUwY2QyMGUwNTI4NDA0YjM3MjMiLCJpYXQiOjE1ODE0MDI0Nzd9.groVm3k9nkfRQeTFmuOlK-_DYqpZcBYQ6-9Cij-3d-4", myProductModel);
+        try {
+            Response<List<MyProductModel>> myProductModelResponse=myproductlist.execute();
+            assertTrue(myProductModelResponse.isSuccessful());
+
+
+        }catch (IOException e){
+            System.out.println(e);
+        }
+
+
+    }
+
+
 
 }
 
