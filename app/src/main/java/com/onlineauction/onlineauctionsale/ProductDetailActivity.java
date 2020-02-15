@@ -123,7 +123,7 @@ public class ProductDetailActivity extends AppCompatActivity {
             }
 
             id = bundle.getString("id");
-            Toast.makeText(this, "id" + id, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "id" + id, Toast.LENGTH_SHORT).show();
             product_name.setText(bundle.getString("name"));
             product_category.setText(bundle.getString("category"));
             base_price.setText(bundle.getString("base_price"));
@@ -182,7 +182,7 @@ public void PlaceMyProduct(){
 
                     MyProductModel myProductModel = new MyProductModel(img_name, prodname, baseprice, enddate, usermail);
                     String token = "Bearer " + LoginBLl.Token;
-                    Toast.makeText(ProductDetailActivity.this, "" + token, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(ProductDetailActivity.this, "" + token, Toast.LENGTH_SHORT).show();
                     AddMyProduct(token, myProductModel);
                     Intent intent = new Intent(ProductDetailActivity.this, AdminDashboardActivity.class);
                     startActivity(intent);
@@ -233,7 +233,7 @@ public void PlaceMyProduct(){
                     return;
                 }
 
-                Toast.makeText(ProductDetailActivity.this, "Bid Posted. Thank You :)", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProductDetailActivity.this, "Bid Posted. Thank You", Toast.LENGTH_SHORT).show();
             }
 
             @Override

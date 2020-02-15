@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putString("username",u.getEmail());
         editor.putString("password",u.getPassword());
-        Toast.makeText(this, "User Saved", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
         editor.commit();
     }
     public boolean login(Users u){

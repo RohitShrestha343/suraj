@@ -52,7 +52,6 @@ public class BidItemsList extends Fragment {
     }
 
     public void LoadMyProducts(String token) {
-//        Toast.makeText(getContext(), "" + token, Toast.LENGTH_SHORT).show();
         ApiClass apiClass = new ApiClass();
         final Call<List<MyProductModel>> myproductlist = apiClass.calls().myproducts(token);
         myproductlist.enqueue(new Callback<List<MyProductModel>>() {

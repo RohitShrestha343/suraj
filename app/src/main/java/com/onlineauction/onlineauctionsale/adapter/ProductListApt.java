@@ -60,7 +60,6 @@ public class ProductListApt extends RecyclerView.Adapter<ProductListApt.Products
                 Intent intent = new Intent(context, ProductDetailActivity.class);
 
                 intent.putExtra("id", productsData.get_id());
-//                Toast.makeText(context, "product id"+productsData.get_id(), Toast.LENGTH_SHORT).show();
                 intent.putExtra("image", imagepath);
                 intent.putExtra("imagename", productsData.getProduct_Image());
                 intent.putExtra("name", productsData.getProduct_name());

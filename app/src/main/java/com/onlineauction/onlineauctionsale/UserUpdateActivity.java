@@ -180,7 +180,7 @@ public class UserUpdateActivity extends AppCompatActivity {
                     return;
                 }
 
-                Toast.makeText(UserUpdateActivity.this, "update", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserUpdateActivity.this, "User Updated", Toast.LENGTH_SHORT).show();
             }
 
             @Override

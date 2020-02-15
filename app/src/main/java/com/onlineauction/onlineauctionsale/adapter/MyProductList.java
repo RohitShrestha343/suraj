@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.onlineauction.onlineauctionsale.R;
 import com.onlineauction.onlineauctionsale.StrictModeClass.StrictModeClass;
 import com.onlineauction.onlineauctionsale.model.MyProductModel;
-import com.onlineauction.onlineauctionsale.model.ProductsData;
 
 import java.io.InputStream;
 import java.net.URL;
